@@ -1,12 +1,17 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:xpense_tracker/screens/dashbord_screen.dart';
 import 'bindings/binding.dart';
-import 'common/common.dart';
+import 'constant/constant.dart';
+import 'firebase_options.dart';
 import 'routes/route.dart';
-import 'screens/splash_screen.dart';
+import 'screens/screen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -17,7 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: Constant.projectName,
+      title: Const.projectName,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -25,10 +30,10 @@ class MyApp extends StatelessWidget {
         highlightColor: Colors.blue.withOpacity(0.3),
       ),
       defaultTransition: Transition.rightToLeft,
-      initialRoute: Routes.dashbord,
-      initialBinding: DashbordBinding(),
+      initialRoute: Routes.splash,
+      initialBinding: SplashBinding(),
       getPages: pages,
-      home: const DashbordScreen(),
+      home: const SplashScreen(),
     );
   }
 }

@@ -7,6 +7,21 @@ class SplashScreen extends GetView<SplashController> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+        body: Stack(
+      alignment: Alignment.center,
+      children: [
+        Container(
+          color: Colors.blue,
+        ),
+        const Text(
+          'Xpense',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        )
+        // const CommonAppTitle(
+        //   color: Colors.white,
+        // ),
+      ],
+    ));
   }
 }

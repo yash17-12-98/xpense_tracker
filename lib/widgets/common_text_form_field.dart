@@ -36,7 +36,7 @@ class CommonTextFormField extends StatelessWidget {
     this.multiLine = false,
     this.labelText,
     this.isObscure = false,
-    this.hintTextStyle/*= const TextStyle(height:2.8,color: ColorsConfig.colorLightDarkBlue)*/,
+    this.hintTextStyle/*= constant TextStyle(height:2.8,color: ColorsConfig.colorLightDarkBlue)*/,
     this.validator,
     this.borderRadius = 10.0,
     this.textInputAction = TextInputAction.done,
@@ -80,10 +80,10 @@ class CommonTextFormField extends StatelessWidget {
       onFieldSubmitted: onFieldSubmitted,
       decoration: InputDecoration(
         fillColor: fillColor,
-        // contentPadding: const EdgeInsets.symmetric(horizontal: 10.0),
+        // contentPadding: constant EdgeInsets.symmetric(horizontal: 10.0),
         // contentPadding: isPadding!
-        //     ? const EdgeInsets.fromLTRB(20, 0, 12, 0)
-        //     : const EdgeInsets.fromLTRB(20, 0, 12, 30),
+        //     ? constant EdgeInsets.fromLTRB(20, 0, 12, 0)
+        //     : constant EdgeInsets.fromLTRB(20, 0, 12, 30),
         focusColor: Colors.white,
         isDense: isDense,
         suffixIcon: suffixIcon,
