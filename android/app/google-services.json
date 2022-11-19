@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "712566736025",
+    "firebase_url": "https://xpensertracker-default-rtdb.firebaseio.com",
+    "project_id": "xpensertracker",
+    "storage_bucket": "xpensertracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712566736025:android:846a5199275f264ce02408",
+        "android_client_info": {
+          "package_name": "com.example.xpense_tracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712566736025-2tt1tca1dnbgbujhjm4u78dkm35fk9hc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKvqF2umZQseuQG1_em-gkM43VDlIcO0I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712566736025-2tt1tca1dnbgbujhjm4u78dkm35fk9hc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
