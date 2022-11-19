@@ -7,7 +7,7 @@ import '../routes/route.dart';
 import '../utils/util.dart';
 
 
-class SplashController extends GetxController {
+class SplashController extends BaseController {
   @override
   void onInit() {
     Timer(const Duration(seconds: 3), manageAuthState);
@@ -19,7 +19,7 @@ class SplashController extends GetxController {
       case true:
         return Get.offNamed(Routes.expense);
       case false:
-        return Get.offNamed(Routes.login);
+        return Get.offNamed(Routes.wizard);
     }
   }
 }

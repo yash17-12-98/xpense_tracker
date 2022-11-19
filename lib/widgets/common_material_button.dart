@@ -3,15 +3,23 @@ import 'package:flutter/material.dart';
 class CommonMaterialButton extends StatelessWidget {
   final Color? color;
   final String? text;
+  final Color? textColor;
   final double? minWidth;
   final Function()? onPressed;
 
-  const CommonMaterialButton({Key? key, this.color, this.text, this.onPressed, this.minWidth})
+  const CommonMaterialButton(
+      {Key? key,
+      this.color,
+      this.text,
+      this.onPressed,
+      this.minWidth,
+      this.textColor})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
+      elevation: 0.0,
       color: color,
       padding: const EdgeInsets.all(15.0),
       onPressed: onPressed,
@@ -21,7 +29,7 @@ class CommonMaterialButton extends StatelessWidget {
           side: BorderSide.none),
       child: Text(
         text.toString(),
-        style: const TextStyle(color: Colors.white),
+        style: TextStyle(color: textColor),
       ),
     );
   }

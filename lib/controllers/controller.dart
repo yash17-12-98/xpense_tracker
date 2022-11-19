@@ -4,3 +4,4 @@ export 'login_controller.dart';
 export 'signup_controller.dart';
 export 'dashbord_controller.dart';
 export 'expense_controller.dart';
+export 'wizard_controller.dart';

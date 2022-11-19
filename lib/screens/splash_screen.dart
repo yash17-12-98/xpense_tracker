@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../constant/constant.dart';
 import '../controllers/controller.dart';
 
 class SplashScreen extends GetView<SplashController> {
@@ -12,15 +13,16 @@ class SplashScreen extends GetView<SplashController> {
       alignment: Alignment.center,
       children: [
         Container(
-          color: Colors.blue,
+          color: AppColors.primaryColor,
         ),
         const Text(
           'Xpense',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 56,
+          ),
         )
-        // const CommonAppTitle(
-        //   color: Colors.white,
-        // ),
       ],
     ));
   }
