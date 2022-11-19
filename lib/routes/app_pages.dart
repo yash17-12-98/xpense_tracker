@@ -9,5 +9,9 @@ List<GetPage> pages = [
     page: () => const SplashScreen(),
     binding: SplashBinding(),
   ),
-
+  GetPage(
+    name: Routes.expense,
+    page: () => const ExpenseScreen(),
+    binding: SplashBinding(),
+  ),
 ];

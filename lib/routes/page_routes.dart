@@ -1,4 +1,4 @@
-abstract class Routes{
+abstract class Routes {
   static const splash = '/';
   static const login = '/login';
   static const signup = '/signup';
@@ -6,4 +6,5 @@ abstract class Routes{
   static const searchUser = '/searchUser';
   static const profile = '/profile';
   static const chat = '/chat';
+  static const expense = '/expense';
 }
