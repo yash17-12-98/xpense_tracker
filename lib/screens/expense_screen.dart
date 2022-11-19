@@ -12,7 +12,9 @@ class ExpenseScreen extends GetView<ExpenseController> {
       backgroundColor: AppColors.redColor,
       body: Column(children: [
         Row(
-          children: [],
+          children: [
+
+          ],
         )
       ]),
     );
