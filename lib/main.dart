@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xpense_tracker/screens/dashbord_screen.dart';
+import 'package:xpense_tracker/screens/expense_screen.dart';
+import 'package:xpense_tracker/screens/screen.dart';
 import 'bindings/binding.dart';
 import 'common/common.dart';
 import 'routes/route.dart';
@@ -25,10 +27,10 @@ class MyApp extends StatelessWidget {
         highlightColor: Colors.blue.withOpacity(0.3),
       ),
       defaultTransition: Transition.rightToLeft,
-      initialRoute: Routes.dashbord,
-      initialBinding: DashbordBinding(),
+      initialRoute: Routes.income,
+      initialBinding: IncomeBinding(),
       getPages: pages,
-      home: const DashbordScreen(),
+      home:  const IncomeScreen(),
     );
   }
 }
