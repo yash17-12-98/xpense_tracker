@@ -8,15 +8,18 @@ class ExpenseScreen extends GetView<ExpenseController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.redColor,
-      body: Column(children: [
-        Row(
-          children: [
-
-          ],
-        )
-      ]),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: AppColors.redColor,
+        body: Column(children: [
+          Row(
+            children: [
+              
+              Text("Expense",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.w800),)
+            ],
+          )
+        ]),
+      ),
     );
   }
 }
