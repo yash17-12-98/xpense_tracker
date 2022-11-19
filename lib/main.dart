@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:xpense_tracker/screens/dashbord_screen.dart';
 import 'bindings/binding.dart';
 import 'common/common.dart';
 import 'routes/route.dart';
@@ -24,10 +25,10 @@ class MyApp extends StatelessWidget {
         highlightColor: Colors.blue.withOpacity(0.3),
       ),
       defaultTransition: Transition.rightToLeft,
-      initialRoute: Routes.expense,
-      initialBinding: ExpenseBinding(),
+      initialRoute: Routes.dashbord,
+      initialBinding: DashbordBinding(),
       getPages: pages,
-      home: const SplashScreen(),
+      home: const DashbordScreen(),
     );
   }
 }

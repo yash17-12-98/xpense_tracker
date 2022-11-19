@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:xpense_tracker/controllers/controller.dart';
 import '../bindings/binding.dart';
 import '../screens/screen.dart';
 import 'page_routes.dart';
@@ -10,8 +11,8 @@ List<GetPage> pages = [
     binding: SplashBinding(),
   ),
   GetPage(
-    name: Routes.expense,
-    page: () => const ExpenseScreen(),
-    binding: SplashBinding(),
+    name: Routes.dashbord,
+    page: () => const DashbordScreen(),
+    binding: DashbordBinding(),
   ),
 ];
