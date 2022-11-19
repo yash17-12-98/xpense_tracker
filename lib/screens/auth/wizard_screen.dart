@@ -18,7 +18,8 @@ class WizardScreen extends GetView<WizardController> {
                 itemBuilder: (context, index) {
                   var wizard = controller.wizardList[index];
                   return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 25.0, horizontal: 15.0),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 25.0, horizontal: 15.0),
                     child: Column(
                       children: [
                         Image.asset(
@@ -54,30 +55,31 @@ class WizardScreen extends GetView<WizardController> {
                 itemCount: controller.wizardList.length, // Can be null
               ),
             ),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: CommonMaterialButton(
-                    color: AppColors.primaryColor,
-                    text: 'Sign Up',
-                    textColor: AppColors.lightGreyButtonColor,
-                    minWidth: Get.width,
-                    onPressed: () {},
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: CommonMaterialButton(
-                    color: AppColors.lightGreyButtonColor,
-                    text: 'Login',
-                    textColor: AppColors.primaryColor,
-                    minWidth: Get.width,
-                    onPressed: () {},
-                  ),
-                )
-              ],
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
+              child: CommonMaterialButton(
+                color: AppColors.primaryColor,
+                text: 'Sign Up',
+                textColor: AppColors.lightGreyButtonColor,
+                minWidth: Get.width,
+                onPressed: () {},
+              ),
             ),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
+              child: CommonMaterialButton(
+                color: AppColors.lightGreyButtonColor,
+                text: 'Login',
+                textColor: AppColors.primaryColor,
+                minWidth: Get.width,
+                onPressed: () {},
+              ),
+            ),
+            const SizedBox(
+              height: 5.0,
+            )
           ],
         ),
       ),
