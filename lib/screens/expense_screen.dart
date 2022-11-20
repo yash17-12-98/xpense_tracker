@@ -30,7 +30,7 @@ class ExpenseScreen extends GetView<ExpenseController> {
           const SizedBox(height: 10,),
           const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10),
-                child: Text("\$ 0",style: TextStyle(color: AppColors.white,fontSize: 64,fontWeight: FontWeight.w600),),
+                child: Text("₹ 0",style: TextStyle(color: AppColors.white,fontSize: 64,fontWeight: FontWeight.w600),),
               ),
           const SizedBox(height: 50,),
           Expanded(

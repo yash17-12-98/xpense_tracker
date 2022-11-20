@@ -70,7 +70,7 @@ class DashbordScreen extends GetView<DashbordController> {
             height: 10.0,
           ),
           const Text(
-            '\$ 9400',
+            '₹ 9400',
             style: TextStyle(
               color: AppColors.textColor,
               fontSize: 40.0,
@@ -113,7 +113,7 @@ class DashbordScreen extends GetView<DashbordController> {
                           ),
                         ),
                         Text(
-                          '\$5000',
+                          '₹5000',
                           style: TextStyle(
                             color: AppColors.white,
                             fontSize: 22.0,
@@ -155,7 +155,7 @@ class DashbordScreen extends GetView<DashbordController> {
                           ),
                         ),
                         Text(
-                          '\$1200',
+                          '₹1200',
                           style: TextStyle(
                             color: AppColors.white,
                             fontSize: 22.0,
@@ -273,7 +273,7 @@ class DashbordScreen extends GetView<DashbordController> {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             const Text(
-                              '-\$120',
+                              '-₹120',
                               style: TextStyle(
                                 color: AppColors.redColor,
                                 fontSize: 18.0,
@@ -346,7 +346,7 @@ class DashbordScreen extends GetView<DashbordController> {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             const Text(
-                              '-\$32',
+                              '-₹32',
                               style: TextStyle(
                                 color: AppColors.redColor,
                                 fontSize: 18.0,
@@ -419,7 +419,7 @@ class DashbordScreen extends GetView<DashbordController> {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             const Text(
-                              '-\$80',
+                              '-₹80',
                               style: TextStyle(
                                 color: AppColors.redColor,
                                 fontSize: 18.0,

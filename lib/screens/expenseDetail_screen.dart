@@ -70,7 +70,7 @@ class ExpenseDetails extends GetView<IncomeController> {
                       children: const [
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 10),
-                          child: Text("\$120",style: TextStyle(color: AppColors.white,fontSize: 64,fontWeight: FontWeight.w600),),
+                          child: Text("₹120",style: TextStyle(color: AppColors.white,fontSize: 64,fontWeight: FontWeight.w600),),
                         ),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 10),
