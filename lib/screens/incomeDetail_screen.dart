@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../common/common.dart';
 import '../controllers/controller.dart';
 import '../widgets/widget.dart';
+import '../routes/route.dart';
 
 class IncomeDetails extends GetView<IncomeController> {
   const IncomeDetails({Key? key}) : super(key: key);
@@ -166,7 +167,7 @@ class IncomeDetails extends GetView<IncomeController> {
                       child: Image.asset(ImagesPath.tempImg),
                     ),
                     const SizedBox(height: 40,),
-                    ButtonWidget(onTap: () {  },)
+                    ButtonWidget(onTap: () { Get.toNamed(Routes.expenseDetail); },)
 
 
                   ],

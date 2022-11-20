@@ -31,4 +31,9 @@ List<GetPage> pages = [
     page: () => const IncomeDetails(),
     binding: IncomeDetailBinding(),
   ),
+  GetPage(
+    name: Routes.expenseDetail,
+    page: () => const ExpenseDetails(),
+    binding: ExpenseDetailBinding(),
+  ),
 ];
