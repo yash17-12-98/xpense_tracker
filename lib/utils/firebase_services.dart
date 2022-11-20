@@ -18,16 +18,19 @@ class FirebaseServices {
   String? get uid => auth.currentUser != null ? auth.currentUser!.uid : null;
 
   Future signUpUserWithEmailAndPassword(
-      {name, imageUrl, email, password}) async {
+      {name, email, password}) async {
     try {
+      print("email: $email");
+      print("password: $password");
       UserCredential userCredential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
+      print("Check");
       UserModel userModel = UserModel(
           name: name,
           email: email,
-          imageUrl: imageUrl,
           password: password,
           uid: userCredential.user!.uid);
+
 
       // SharedPreferenceHelper.prefs.setString(key, value);
       await DatabaseService.instance.addUserDataToDb(

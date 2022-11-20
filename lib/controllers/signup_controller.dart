@@ -17,29 +17,19 @@ class SignupController extends BaseController {
   final TextEditingController confirmPwdController = TextEditingController();
   RxBool check = false.obs;
 
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
   Future<void> updateImage() async {
     imageFile.value = await Common.pickImageFromGallery();
     if (imageFile.value != null) {
       Common.logger.d("ImageFile Path: ${imageFile.toString()}");
       Common.logger
-          .d("ImageFile Name: ${imageFile.value!
-          .path
-          .split('/')
-          .last}");
+          .d("ImageFile Name: ${imageFile.value!.path.split('/').last}");
     }
   }
 
   Future<File> getImageFileFromAssets(String path) async {
     final byteData = await rootBundle.load(path);
     final file =
-    File('${(await getTemporaryDirectory()).path}/${path
-        .split("/")
-        .last}');
+        File('${(await getTemporaryDirectory()).path}/${path.split("/").last}');
     await file.writeAsBytes(byteData.buffer
         .asUint8List(byteData.offsetInBytes, byteData.lengthInBytes));
     return file;
@@ -48,9 +38,7 @@ class SignupController extends BaseController {
   Future<bool> uploadFile(imageFile) async {
     if (imageFile != null) {
       await Storage.instance
-          .uploadFile(imageFile.path, imageFile.path
-          .split('/')
-          .last);
+          .uploadFile(imageFile.path, imageFile.path.split('/').last);
       return true;
     }
     return false;
@@ -59,10 +47,7 @@ class SignupController extends BaseController {
   Future<String?> getDownloadedFileUrl(isUploaded) async {
     return isUploaded
         ? await Storage.instance
-        .getDownloadedUrl(imageFile.value!
-        .path
-        .split('/')
-        .last)
+            .getDownloadedUrl(imageFile.value!.path.split('/').last)
         : null;
   }
 
@@ -76,28 +61,30 @@ class SignupController extends BaseController {
 
   Future<void> signup() async {
     Get.focusScope!.unfocus();
-    if (formKey.currentState!.validate()) {
-      load.value = true;
-      var imgFile = await checkFileImg();
-      var isUploaded = await uploadFile(imgFile);
-      var imageUrl = await getDownloadedFileUrl(isUploaded);
-      Common.logger.d("FILE UPLOADED FOR $imageUrl");
-      FirebaseServices.instance
-          .signUpUserWithEmailAndPassword(
-          name: nameController.text,
-          imageUrl: imageUrl,
-          email: emailController.text,
-          password: confirmPwdController.text)
-          .then((value) {
-        load.value = false;
-        if (value != null) {
-          Get.back();
+      if (formKey.currentState!.validate()) {
+        if(check.value == true){
+          load.value = true;
+          FirebaseServices.instance
+              .signUpUserWithEmailAndPassword(
+              name: nameController.text,
+              email: emailController.text,
+              password: pwdController.text)
+              .then((value) {
+            load.value = false;
+            if (value != null) {
+              Get.back();
+              Common.showSnackBar(
+                  title: "SIGNUP",
+                  subtitle: "Account created successfully",
+                  color: Colors.green);
+            }
+          });
+        }else{
           Common.showSnackBar(
-              title: "SIGNUP",
-              subtitle: "Account created successfully",
-              color: Colors.green);
+              color: Colors.red,
+              title: 'Terms and Condition',
+              subtitle: 'Please accept the Terms of service and Privacy policy');
         }
-      });
-    }
+      }
   }
 }

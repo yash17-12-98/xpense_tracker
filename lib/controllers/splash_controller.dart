@@ -17,7 +17,7 @@ class SplashController extends BaseController {
   manageAuthState() {
     switch (FirebaseServices.instance.isSignedIn) {
       case true:
-        return Get.offNamed(Routes.expense);
+        return Get.offNamed(Routes.home);
       case false:
         return Get.offNamed(Routes.wizard);
     }

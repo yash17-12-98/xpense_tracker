@@ -31,111 +31,93 @@ class SignupScreen extends GetView<SignupController> {
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
-            child: Form(
-              key: controller.formKey,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    GestureDetector(
-                      onTap: () async {
-                        await controller.updateImage();
-                      },
-                      child: Obx(
-                        () => CircleAvatar(
-                          radius: 50,
-                          backgroundImage: controller.imageFile.value == null
-                              ? Image.asset(
-                                  ImagesPath.userIcon,
-                                  color: Colors.white,
-                                  scale: 5.5,
-                                ).image
-                              : Image.file(
-                                  controller.imageFile.value!,
-                                  fit: BoxFit.fill,
-                                ).image,
-                        ),
+            child: SingleChildScrollView(
+              child: Form(
+                key: controller.formKey,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      CommonTextFormField(
+                        controller: controller.nameController,
+                        hintText: "Name",
+                        validator: Validator.isNameValid,
                       ),
-                    ),
-                    CommonTextFormField(
-                      controller: controller.nameController,
-                      hintText: "Name",
-                      validator: Validator.isNameValid,
-                    ),
-                    const SizedBox(
-                      height: 10.0,
-                    ),
-                    CommonTextFormField(
-                      controller: controller.emailController,
-                      hintText: "Email",
-                      validator: Validator.isEmailValid,
-                    ),
-                    const SizedBox(
-                      height: 10.0,
-                    ),
-                    CommonTextFormField(
-                      controller: controller.pwdController,
-                      hintText: "Password",
-                      validator: Validator.isPwdValid,
-                    ),
-                    const SizedBox(
-                      height: 20.0,
-                    ),
-                    Row(
-                      children: [
-                        Obx(
-                          () => Checkbox(
-                              value: controller.check.value,
-                              onChanged: (value) {
-                                controller.check.value =
-                                    !controller.check.value;
-                              }),
-                        ),
-                        const Expanded(
-                          child: Text(
-                              'By signing up, you agree to the Terms of Service and Privacy Policy'),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 10.0,
-                    ),
-                    CommonMaterialButton(
-                      textColor: Colors.white,
-                      text: "Sign in",
-                      color: AppColors.primaryColor,
-                      minWidth: Get.width,
-                      onPressed: () => controller.signup(),
-                    ),
-                    const SizedBox(
-                      height: 30.0,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          "Already have an account? ",
-                          style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.normal),
-                        ),
-                        GestureDetector(
-                          onTap: Get.previousRoute == Routes.login
-                              ? () => Get.back()
-                              : () => Get.offNamed(Routes.login),
-                          child: const Text(
-                            "Login",
-                            style: TextStyle(
-                                decoration: TextDecoration.underline,
-                                color: AppColors.primaryColor,
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold),
+                      const SizedBox(
+                        height: 10.0,
+                      ),
+                      CommonTextFormField(
+                        controller: controller.emailController,
+                        hintText: "Email",
+                        validator: Validator.isEmailValid,
+                      ),
+                      const SizedBox(
+                        height: 10.0,
+                      ),
+                      CommonTextFormField(
+                        controller: controller.pwdController,
+                        hintText: "Password",
+                        validator: Validator.isPwdValid,
+                      ),
+                      const SizedBox(
+                        height: 20.0,
+                      ),
+                      Row(
+                        children: [
+                          Obx(
+                            () => Checkbox(
+                                value: controller.check.value,
+                                onChanged: (value) {
+                                  controller.check.value =
+                                      !controller.check.value;
+                                }),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
+                          const Expanded(
+                            child: Text(
+                                'By signing up, you agree to the Terms of Service and Privacy Policy'),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10.0,
+                      ),
+                      CommonMaterialButton(
+                        textColor: Colors.white,
+                        text: "Sign in",
+                        color: AppColors.primaryColor,
+                        minWidth: Get.width,
+                        onPressed: () => controller.signup(),
+                      ),
+                      const SizedBox(
+                        height: 30.0,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            "Already have an account? ",
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.normal),
+                          ),
+                          GestureDetector(
+                            onTap: Get.previousRoute == Routes.login
+                                ? () => Get.back()
+                                : () => Get.offNamed(Routes.login),
+                            child: const Text(
+                              "Login",
+                              style: TextStyle(
+                                  decoration: TextDecoration.underline,
+                                  color: AppColors.primaryColor,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
