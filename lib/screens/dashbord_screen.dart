@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:xpense_tracker/widgets/widget.dart';
 
 import '../constant/constant.dart';
 import '../controllers/controller.dart';
@@ -9,40 +10,16 @@ class DashbordScreen extends GetView<DashbordController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      //key: controller.scaffoldKey,
-      backgroundColor: Colors.white,
-      drawer: Drawer(
-        child: Column(
-          children: [
-            ListTile(
-              title: Text('Dashbord'),
-            ),
-            ListTile(
-              title: Text('Expenses'),
-            ),
-          ],
-        ),
-      ),
-      body: Column(
+    return SafeArea(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const SizedBox(
-            height: 20.0,
-            width: 20.0,
-            child: Icon(
-              Icons.menu,
-              color: AppColors.primaryColor,
-            ),
-          ),
-          const SizedBox(
-            height: 60.0,
+            height: 10.0,
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(
-                width: 92.0,
-              ),
               Container(
                 decoration: BoxDecoration(
                   border: Border.all(
@@ -222,7 +199,7 @@ class DashbordScreen extends GetView<DashbordController> {
             height: 50.0,
           ),
           Padding(
-            padding: const  EdgeInsets.only(left: 10.0),
+            padding: const EdgeInsets.only(left: 10.0),
             child: Row(
               children: const [
                 Text(
@@ -238,50 +215,232 @@ class DashbordScreen extends GetView<DashbordController> {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(left:8.0, right: 8.0, bottom: 8.0),
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: 3,
-                itemBuilder: (builder, index) {
-                  return Padding(
-                    padding: const EdgeInsets.only( bottom: 8.0),
-                    child: Container(
-                      height: 89.0,
-                      width: MediaQuery.of(context).size.width * 0.90,
-                      decoration: BoxDecoration(color: AppColors.textHintColor.withAlpha(20), borderRadius: BorderRadius.circular(19.0),),
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 60.0,width: 60.0,
-                            decoration: BoxDecoration(color: Color(0xFFFCEED4), borderRadius: BorderRadius.circular(10.0)),
-                            child: Image.asset(ImagesPath.shopingBagImage, scale: 15.0,),
+              padding:
+                  const EdgeInsets.only(left: 8.0, right: 8.0, bottom: 8.0),
+              child: ListView(shrinkWrap: true, children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: Container(
+                    height: 89.0,
+                    width: MediaQuery.of(context).size.width * 0.90,
+                    decoration: BoxDecoration(
+                      color: AppColors.textHintColor.withAlpha(20),
+                      borderRadius: BorderRadius.circular(19.0),
+                    ),
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 60.0,
+                          width: 60.0,
+                          decoration: BoxDecoration(
+                              color: const Color(0xFFFCEED4),
+                              borderRadius: BorderRadius.circular(10.0)),
+                          child: Image.asset(
+                            ImagesPath.shopingBagImage,
+                            scale: 15.0,
                           ),
-                          const SizedBox(width: 10.0,),
-                          Expanded(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('Shopping', style: TextStyle(color: AppColors.textColor, fontSize: 16.0, fontWeight: FontWeight.w600,),),
-                                Text('Buy some Grocery',style: TextStyle(color: AppColors.textHintColor, fontSize: 16.0, fontWeight: FontWeight.w400,),)
-                              ],
-                            ),
-                          ),
-                          Column(
+                        ),
+                        const SizedBox(
+                          width: 10.0,
+                        ),
+                        Expanded(
+                          child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            crossAxisAlignment: CrossAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('-\$120',style: TextStyle(color: AppColors.redColor, fontSize: 18.0, fontWeight: FontWeight.w600,),),
-                              Text('10:00 AM',style: TextStyle(color: AppColors.textHintColor, fontSize: 16.0, fontWeight: FontWeight.w400,),)
+                              const Text(
+                                'Shopping',
+                                style: TextStyle(
+                                  color: AppColors.textColor,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              const Text(
+                                'Buy some Glocery',
+                                style: TextStyle(
+                                  color: AppColors.textHintColor,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              )
                             ],
                           ),
-                        ],
-                      ),
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            const Text(
+                              '-\$120',
+                              style: TextStyle(
+                                color: AppColors.redColor,
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            const Text(
+                              '10:00 AM',
+                              style: TextStyle(
+                                color: AppColors.textHintColor,
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
                     ),
-                  );
-                },
-              ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: Container(
+                    height: 89.0,
+                    width: MediaQuery.of(context).size.width * 0.90,
+                    decoration: BoxDecoration(
+                      color: AppColors.textHintColor.withAlpha(20),
+                      borderRadius: BorderRadius.circular(19.0),
+                    ),
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 60.0,
+                          width: 60.0,
+                          decoration: BoxDecoration(
+                              color: const Color(0xFFFCEED4),
+                              borderRadius: BorderRadius.circular(10.0)),
+                          child: Image.asset(ImagesPath.subscriptionImage),
+                        ),
+                        const SizedBox(
+                          width: 10.0,
+                        ),
+                        Expanded(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                'Subscription',
+                                style: TextStyle(
+                                  color: AppColors.textColor,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              const Text(
+                                'Disney + Anual..',
+                                style: TextStyle(
+                                  color: AppColors.textHintColor,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            const Text(
+                              '-\$32',
+                              style: TextStyle(
+                                color: AppColors.redColor,
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            const Text(
+                              '07:30 PM',
+                              style: TextStyle(
+                                color: AppColors.textHintColor,
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: Container(
+                    height: 89.0,
+                    width: MediaQuery.of(context).size.width * 0.90,
+                    decoration: BoxDecoration(
+                      color: AppColors.textHintColor.withAlpha(20),
+                      borderRadius: BorderRadius.circular(19.0),
+                    ),
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 60.0,
+                          width: 60.0,
+                          decoration: BoxDecoration(
+                              color: const Color(0xFFFCEED4),
+                              borderRadius: BorderRadius.circular(10.0)),
+                          child: Image.asset(ImagesPath.mealImage),
+                        ),
+                        const SizedBox(
+                          width: 10.0,
+                        ),
+                        Expanded(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                'Food',
+                                style: TextStyle(
+                                  color: AppColors.textColor,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              const Text(
+                                'Buy a Pizza',
+                                style: TextStyle(
+                                  color: AppColors.textHintColor,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            const Text(
+                              '-\$80',
+                              style: TextStyle(
+                                color: AppColors.redColor,
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            const Text(
+                              '03:345 PM',
+                              style: TextStyle(
+                                color: AppColors.textHintColor,
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+              ]),
             ),
           ),
         ],

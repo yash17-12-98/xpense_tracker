@@ -18,6 +18,11 @@ List<GetPage> pages = [
     binding: SplashBinding(),
   ),
   GetPage(
+    name: Routes.home,
+    page: () => const HomeScreen(),
+    binding: HomeBinding(),
+  ),
+  GetPage(
     name: Routes.login,
     page: () => const LoginScreen(),
     binding: LoginBinding(),
