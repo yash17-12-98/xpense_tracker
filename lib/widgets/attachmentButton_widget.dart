@@ -11,7 +11,7 @@ class AttachmentButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: 50,
+      height: 60,
       decoration: BoxDecoration(
           border: Border.all(
             color: AppColors.textFieldBorder,

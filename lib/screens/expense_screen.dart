@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import '../constant/constant.dart';
 import '../controllers/controller.dart';
+import '../routes/route.dart';
 import '../widgets/widget.dart';
 
 class ExpenseScreen extends GetView<ExpenseController> {
@@ -17,24 +18,24 @@ class ExpenseScreen extends GetView<ExpenseController> {
             children: [
           Row(
             children: [
-              IconButton(onPressed: (){}, icon:Icon( Icons.keyboard_arrow_left),color: Colors.white,),
-              Expanded(child: Center(child: Text("Expense",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.w800),),))
+              IconButton(onPressed: (){}, icon:const Icon( Icons.keyboard_arrow_left,size: 25,),color: Colors.white,),
+              const Expanded(child: Center(child: Text("Expense",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.w800),),))
             ],
           ),
-          SizedBox(height: 50,),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+          const SizedBox(height: 60,),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
             child: Text("How much?",style: TextStyle(color: AppColors.lightWhite,fontSize: 18,fontWeight: FontWeight.w600),),
           ),
-          SizedBox(height: 20,),
-          Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+          const SizedBox(height: 10,),
+          const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
                 child: Text("\$ 0",style: TextStyle(color: AppColors.white,fontSize: 64,fontWeight: FontWeight.w600),),
               ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 50,),
           Expanded(
             child: Container(
-              decoration: BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(32),topRight: Radius.circular(32)),
+              decoration: const BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(32),topRight: Radius.circular(32)),
                 color: AppColors.white
               ),
               child: Padding(
@@ -50,9 +51,9 @@ class ExpenseScreen extends GetView<ExpenseController> {
                     SizedBox(height: 20,),
                     AttachmentButtonWidget(),
                     SizedBox(height: 20,),
-                    ButtonWidget(),
-
-
+                    ButtonWidget(onTap: (){
+                      Get.toNamed(Routes.incomeDetail);
+                    },),
                   ],
                 ),
               ),

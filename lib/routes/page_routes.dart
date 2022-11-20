@@ -8,4 +8,7 @@ abstract class Routes {
   static const chat = '/chat';
   static const expense = '/expense';
   static const wizard = '/wizard';
+  static const income = '/income';
+  static const incomeDetail = '/incomeDetail';
+  static const expenseDetail = '/expenseDetail';
 }
