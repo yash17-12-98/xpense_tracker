@@ -60,7 +60,7 @@ class LoginScreen extends GetView<LoginController> {
                           text: "Sign in",
                           color: AppColors.primaryColor,
                           minWidth: Get.width,
-                          onPressed: () => Get.offAndToNamed(Routes.dashbord),
+                          onPressed: () => Get.offAndToNamed(Routes.home),
                         ),
                         const SizedBox(
                           height: 30.0,
