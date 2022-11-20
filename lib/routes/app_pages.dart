@@ -14,6 +14,11 @@ List<GetPage> pages = [
     binding: SplashBinding(),
   ),
   GetPage(
+    name: Routes.home,
+    page: () => const HomeScreen(),
+    binding: HomeBinding(),
+  ),
+  GetPage(
     name: Routes.dashbord,
     page: () => const DashbordScreen(),
     binding: DashbordBinding(),
