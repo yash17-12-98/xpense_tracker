@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:syncfusion_flutter_charts/sparkcharts.dart';
-import 'package:xpense_tracker/common/common.dart';
 
 import '../constant/constant.dart';
 import '../controllers/controller.dart';
