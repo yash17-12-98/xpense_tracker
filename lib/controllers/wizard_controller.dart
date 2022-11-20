@@ -8,13 +8,10 @@ class WizardController extends BaseController {
   RxList<Wizard> wizardList = <Wizard>[].obs;
   RxInt tempIndex = 0.obs;
   PageController pageController = PageController();
+
   @override
   void onInit() {
     initData();
-    // pageController.addListener(() {
-    //     currentPageValue = controller.page;
-    //
-    // });
     super.onInit();
   }
 
@@ -32,11 +29,6 @@ class WizardController extends BaseController {
         image: ImagesPath.planningAhead,
         title: 'Planning ahead',
         subTitle: 'Setup your budget for each category \nso you in control'));
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
   }
 }
 

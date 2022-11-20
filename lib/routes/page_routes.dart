@@ -12,4 +12,5 @@ abstract class Routes {
   static const incomeDetail = '/incomeDetail';
   static const expenseDetail = '/expenseDetail';
   static const home = '/home';
+  static const transactionDetail = '/transactionDetail';
 }

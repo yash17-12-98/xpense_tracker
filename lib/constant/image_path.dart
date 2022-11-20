@@ -13,10 +13,13 @@ class ImagesPath {
   static const expenseImage = "assets/images/expense_image.png";
   static const dataFlowImage = "assets/images/data_flow.png";
   static const shopingBagImage = "assets/images/shopping-bag.png";
+  static const userIcon = 'assets/images/user_icon.png';
   static const subscriptionImage = "assets/images/subscription-image.png";
   static const mealImage = "assets/images/meal-image.png";
   static const homeImage = "assets/images/home.png";
   static const pieImage = "assets/images/pie.png";
   static const transactionImage = "assets/images/Transaction.png";
   static const useerImage = "assets/images/user.png";
+  static const successSVG = "assets/svg/success.svg";
+  static const shoppingSVG = "assets/svg/shopping_.svg";
 }

@@ -68,7 +68,7 @@ class CommonTextFormField extends StatelessWidget {
       enabled: isEnable,
       readOnly: read!,
       scrollPadding:
-      scroll == true ? const EdgeInsets.only(bottom: 300) : EdgeInsets.zero,
+          scroll == true ? const EdgeInsets.only(bottom: 300) : EdgeInsets.zero,
       // multiLine == false ? null : [LengthLimitingTextInputFormatter(500),FilteringTextInputFormatter.digitsOnly],
       // style: CustomTextStyle.textFieldTextStyle,
 

@@ -58,7 +58,141 @@ class IncomeDetails extends GetView<IncomeController> {
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 10,
                                 ),
-                                child: SvgPicture.asset(ImagesPath.deleteIcon),
+                                child: GestureDetector(
+                                    onTap: (){  showModalBottomSheet(
+                                      shape: const RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.vertical(
+                                              top: Radius.circular(100.0))),
+                                      backgroundColor: Colors.green,
+                                      context: context,
+                                      builder: (BuildContext btmMobel) {
+                                        return Container(
+                                          decoration: const BoxDecoration(
+                                            borderRadius: BorderRadius.vertical(
+                                                top: Radius.circular(100.0)),
+                                            color: Colors.red,
+                                          ),
+                                          height: 250.0,
+                                          child: Container(
+                                              decoration: const BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius: BorderRadius.only(
+                                                      topLeft: Radius.circular(10.0),
+                                                      topRight: Radius.circular(10.0))),
+                                              child: Padding(
+                                                padding: const EdgeInsets.symmetric(
+                                                    horizontal: 10),
+                                                child: Column(
+                                                  children: [
+                                                    SizedBox(
+                                                      height: 20,
+                                                    ),
+                                                    Text(
+                                                      "Remove this transaction?",
+                                                      style: TextStyle(
+                                                          fontSize: 18,
+                                                          fontWeight: FontWeight.w600),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 20,
+                                                    ),
+                                                    Text(
+                                                      "Are you sure do you wanna remove this transaction?",
+                                                      textAlign: TextAlign.center,
+                                                      style: TextStyle(
+                                                          fontSize: 18,
+                                                          fontWeight: FontWeight.w600,
+                                                          color: AppColors.textHintColor),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 50,
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        Expanded(
+                                                          child: Padding(
+                                                            padding:
+                                                            const EdgeInsets.symmetric(
+                                                                horizontal: 10),
+                                                            child: CommonMaterialButton(
+                                                              text: "No",
+                                                              minWidth: Get.width,
+                                                              color: AppColors
+                                                                  .buttonBackgroundLight,
+                                                              textColor:
+                                                              AppColors.textHintColor,
+                                                              onPressed: () {
+                                                                Navigator.of(btmMobel)
+                                                                    .pop();
+                                                              },
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Expanded(
+                                                          child: Padding(
+                                                            padding:
+                                                            const EdgeInsets.symmetric(
+                                                                horizontal: 10),
+                                                            child: CommonMaterialButton(
+                                                              text: "Yes",
+                                                              minWidth: Get.width,
+                                                              color: AppColors
+                                                                  .buttonBackground,
+                                                              textColor: AppColors.white,
+                                                              onPressed: () {
+                                                                Navigator.of(btmMobel)
+                                                                    .pop();
+                                                                showDialog(
+                                                                  context: context,
+                                                                  builder: (ctx) =>
+                                                                      AlertDialog(
+                                                                        shape: RoundedRectangleBorder(
+                                                                            borderRadius:
+                                                                            BorderRadius
+                                                                                .all(Radius
+                                                                                .circular(
+                                                                                20))),
+                                                                        content: Column(
+                                                                          mainAxisSize:
+                                                                          MainAxisSize.min,
+                                                                          crossAxisAlignment:
+                                                                          CrossAxisAlignment
+                                                                              .center,
+                                                                          children: [
+                                                                            SvgPicture.asset(
+                                                                                ImagesPath
+                                                                                    .successSVG),
+                                                                            SizedBox(
+                                                                              height: 10,
+                                                                            ),
+                                                                            const Text(
+                                                                              "Transaction has been successfully removed",
+                                                                              textAlign:
+                                                                              TextAlign
+                                                                                  .center,
+                                                                              style: TextStyle(
+                                                                                  fontWeight:
+                                                                                  FontWeight
+                                                                                      .w400,
+                                                                                  fontSize: 14),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                );
+                                                              },
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    )
+                                                  ],
+                                                ),
+                                              )),
+                                        );
+                                      },
+                                    );},
+                                    child: SvgPicture.asset(ImagesPath.deleteIcon)),
                               ),
                             ],
                           ),
@@ -167,7 +301,9 @@ class IncomeDetails extends GetView<IncomeController> {
                       child: Image.asset(ImagesPath.tempImg),
                     ),
                     const SizedBox(height: 40,),
-                    ButtonWidget(onTap: () { Get.toNamed(Routes.expenseDetail); },)
+                    ButtonWidget(onTap: () {
+                      Get.toNamed(Routes.expenseDetail);
+                      },)
 
 
                   ],
