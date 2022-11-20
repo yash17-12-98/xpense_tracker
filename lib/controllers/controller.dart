@@ -8,3 +8,4 @@ export 'income_controller.dart';
 export 'incomeDetail_controller.dart';
 export 'expenseDetail_controller.dart';
 export 'wizard_controller.dart';
+export 'transactionDetail_controller.dart';

@@ -13,4 +13,6 @@ class ImagesPath {
   static const expenseImage = "assets/images/expense_image.png";
   static const dataFlowImage = "assets/images/data_flow.png";
   static const shopingBagImage = "assets/images/shopping-bag.png";
+  static const successSVG = "assets/svg/success.svg";
+  static const shoppingSVG = "assets/svg/shopping_.svg";
 }

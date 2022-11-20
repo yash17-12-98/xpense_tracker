@@ -30,8 +30,8 @@ class MyApp extends StatelessWidget {
         highlightColor: Colors.blue.withOpacity(0.3),
       ),
       defaultTransition: Transition.rightToLeft,
-      initialRoute: Routes.splash,
-      initialBinding: SplashBinding(),
+      initialRoute: Routes.transactionDetail,
+      initialBinding: TransactionDetailBinding(),
       getPages: pages,
       home: const SplashScreen(),
     );
