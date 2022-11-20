@@ -8,22 +8,21 @@ import '../routes/route.dart';
 import '../widgets/widget.dart';
 
 class HomeScreen extends GetView<HomeController> {
-  
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-body: Obx(() =>  Center(child: controller.items.elementAt(controller.tempIndex.value),)),
+      body: Obx(() => Center(
+            child: controller.items.elementAt(controller.tempIndex.value),
+          )),
       bottomNavigationBar: FABBottomAppBar(
         centerItemText: '',
         color: Colors.grey,
         selectedColor: AppColors.primaryColor,
-        notchedShape: CircularNotchedRectangle(),
+        notchedShape: const CircularNotchedRectangle(),
         onTabSelected: (val) {
           controller.tempIndex.value = val;
-          
         },
         items: [
           FABBottomAppBarItem(iconData: ImagesPath.homeImage, text: 'Home'),
@@ -54,9 +53,9 @@ body: Obx(() =>  Center(child: controller.items.elementAt(controller.tempIndex.v
       child: FloatingActionButton(
         onPressed: () {},
         tooltip: 'Increment',
-        child: Icon(Icons.add),
         elevation: 2.0,
         foregroundColor: AppColors.primaryColor,
+        child: Icon(Icons.add),
       ),
     );
   }
