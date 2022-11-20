@@ -2,7 +2,7 @@ import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import '../common/common.dart';
+import '../constant/constant.dart';
 import '../controllers/controller.dart';
 import '../widgets/widget.dart';
 import '../routes/route.dart';
@@ -26,7 +26,7 @@ class IncomeDetails extends GetView<IncomeController> {
                   padding: const EdgeInsets.only(bottom: 40),
                   child: Container(
                     height: MediaQuery.of(context).size.height / 3,
-                    decoration: const BoxDecoration(
+                    decoration:  BoxDecoration(
                         borderRadius: BorderRadius.only(
                             bottomRight: Radius.circular(32),
                             bottomLeft: Radius.circular(32)),

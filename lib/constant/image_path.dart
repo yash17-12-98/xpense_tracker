@@ -6,4 +6,6 @@ class ImagesPath {
   static const totalControl = "assets/images/total_control.png";
   static const enableIndicator = "assets/images/enable_indicator.png";
   static const disableIndicator = "assets/images/disable_indicator.png";
+  static const deleteIcon = "assets/svg/delete.svg";
+  static const tempImg = "assets/images/temp.png";
 }

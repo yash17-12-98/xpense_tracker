@@ -2,7 +2,7 @@ import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import '../common/common.dart';
+import '../constant/constant.dart';
 import '../controllers/controller.dart';
 import '../widgets/widget.dart';
 

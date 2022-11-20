@@ -5,6 +5,7 @@ class AppColors {
   static const redColor = Color(0xFFFD3C4A);
   static const Color backgroundColor = Color.fromARGB(255, 227, 231, 182);
   static const Color whiteColor = Color(0xFFffffff);
+  static const Color greenColor = Color(0xFF00A86B);
 
   // static constant List<Color> backgroundColor = <Color>[
   //   Color.fromARGB(255, 227, 231, 182),
