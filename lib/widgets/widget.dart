@@ -8,3 +8,4 @@ export 'attachmentButton_widget.dart';
 export 'fab_bottom_nav_bar.dart';
 export 'layout.dart';
 export 'fab_with_icon.dart';
+export 'common_material_card.dart';

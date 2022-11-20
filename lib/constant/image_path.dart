@@ -20,4 +20,6 @@ class ImagesPath {
   static const pieImage = "assets/images/pie.png";
   static const transactionImage = "assets/images/Transaction.png";
   static const useerImage = "assets/images/user.png";
+  static const successSVG = "assets/svg/success.svg";
+  static const shoppingSVG = "assets/svg/shopping_.svg";
 }
