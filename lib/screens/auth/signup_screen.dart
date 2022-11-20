@@ -37,6 +37,26 @@ class SignupScreen extends GetView<SignupController> {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: [
+                    GestureDetector(
+                      onTap: () async {
+                        await controller.updateImage();
+                      },
+                      child: Obx(
+                        () => CircleAvatar(
+                          radius: 50,
+                          backgroundImage: controller.imageFile.value == null
+                              ? Image.asset(
+                                  ImagesPath.userIcon,
+                                  color: Colors.white,
+                                  scale: 5.5,
+                                ).image
+                              : Image.file(
+                                  controller.imageFile.value!,
+                                  fit: BoxFit.fill,
+                                ).image,
+                        ),
+                      ),
+                    ),
                     CommonTextFormField(
                       controller: controller.nameController,
                       hintText: "Name",
@@ -85,7 +105,7 @@ class SignupScreen extends GetView<SignupController> {
                       text: "Sign in",
                       color: AppColors.primaryColor,
                       minWidth: Get.width,
-                      onPressed: () {},
+                      onPressed: () => controller.signup(),
                     ),
                     const SizedBox(
                       height: 30.0,
