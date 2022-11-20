@@ -12,16 +12,17 @@ class ExpenseScreen extends GetView<ExpenseController> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        title: const Text('Expense'),
+      ),
         backgroundColor: AppColors.redColor,
         body: Column(
          crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-          Row(
-            children: [
-              IconButton(onPressed: (){}, icon:const Icon( Icons.keyboard_arrow_left,size: 25,),color: Colors.white,),
-              const Expanded(child: Center(child: Text("Expense",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.w800),),))
-            ],
-          ),
+          
           const SizedBox(height: 60,),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 10),

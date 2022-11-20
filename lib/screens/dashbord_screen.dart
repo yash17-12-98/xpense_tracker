@@ -12,8 +12,7 @@ class DashbordScreen extends GetView<DashbordController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
+    return SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -454,26 +453,7 @@ class DashbordScreen extends GetView<DashbordController> {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: FABBottomAppBar(
-        centerItemText: '',
-        color: Colors.grey,
-        selectedColor: AppColors.primaryColor,
-        notchedShape: const CircularNotchedRectangle(),
-        onTabSelected: (val) {
-          // controller.tempIndex.value = val;
-        },
-        items: [
-          FABBottomAppBarItem(iconData: ImagesPath.homeImage, text: 'Home'),
-          FABBottomAppBarItem(
-              iconData: ImagesPath.transactionImage, text: 'Transaction'),
-          FABBottomAppBarItem(iconData: ImagesPath.pieImage, text: 'Budget'),
-          FABBottomAppBarItem(iconData: ImagesPath.useerImage, text: 'Profile'),
-        ],
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: _buildFab(context),
-    );
+      );
   }
 }
 

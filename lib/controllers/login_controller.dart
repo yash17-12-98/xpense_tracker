@@ -30,8 +30,8 @@ class LoginController extends BaseController {
         var value = await DatabaseService.instance.getUserDataFromDb(
             collectionName: Const.userCollectionName,
             docId: signInUser.user!.uid);
-        await SharedPreferenceHelper.prefs!
-            .setString(Const.saveUser, jsonEncode(value));
+        // await SharedPreferenceHelper.prefs!
+        //     .setString(Const.saveUser, jsonEncode(value));
         Get.offNamed(Routes.home);
       }
       load.value = false;
