@@ -25,9 +25,9 @@ class MyApp extends StatelessWidget {
       title: Const.projectName,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        splashColor: Colors.blue.withOpacity(0.3),
-        highlightColor: Colors.blue.withOpacity(0.3),
+        primarySwatch: Colors.purple,
+        splashColor: Colors.purple.withOpacity(0.3),
+        highlightColor: Colors.purple.withOpacity(0.3),
       ),
       defaultTransition: Transition.rightToLeft,
       initialRoute: Routes.splash,

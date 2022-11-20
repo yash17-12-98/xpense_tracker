@@ -1,6 +1,10 @@
 import 'package:get/get.dart';
+import 'package:xpense_tracker/bindings/login_binding.dart';
+import 'package:xpense_tracker/bindings/signup_binding.dart';
 import 'package:xpense_tracker/bindings/wizard_binding.dart';
 import 'package:xpense_tracker/controllers/controller.dart';
+import 'package:xpense_tracker/screens/auth/login_screen.dart';
+import 'package:xpense_tracker/screens/auth/signup_screen.dart';
 import 'package:xpense_tracker/screens/auth/wizard_screen.dart';
 import 'package:xpense_tracker/screens/expense_screen.dart';
 import '../bindings/binding.dart';
@@ -12,6 +16,16 @@ List<GetPage> pages = [
     name: Routes.splash,
     page: () => const SplashScreen(),
     binding: SplashBinding(),
+  ),
+  GetPage(
+    name: Routes.login,
+    page: () => const LoginScreen(),
+    binding: LoginBinding(),
+  ),
+  GetPage(
+    name: Routes.signup,
+    page: () => const SignupScreen(),
+    binding: SignUpBinding(),
   ),
   GetPage(
     name: Routes.dashbord,
